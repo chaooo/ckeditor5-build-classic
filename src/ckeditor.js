@@ -19,6 +19,7 @@ import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
+import ImageResize from '@ckeditor/ckeditor5-image/src/imageResize';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import Link from '@ckeditor/ckeditor5-link/src/link';
@@ -29,11 +30,24 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily'
+import FontSize from '@ckeditor/ckeditor5-font/src/fontSize'
+import FontColor from '@ckeditor/ckeditor5-font/src/fontColor'
+import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontBackgroundColor'
+
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
+	Alignment,
+	Highlight,
+	FontFamily,
+	FontSize,
+	FontColor,
+	FontBackgroundColor,
 	Essentials,
 	UploadAdapter,
 	Autoformat,
@@ -47,6 +61,7 @@ ClassicEditor.builtinPlugins = [
 	ImageCaption,
 	ImageStyle,
 	ImageToolbar,
+	ImageResize,
 	ImageUpload,
 	Indent,
 	Link,
@@ -64,6 +79,13 @@ ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'heading',
+			'|',
+			'alignment',
+			'fontSize',
+			'fontFamily',
+			'fontColor',
+			'fontBackgroundColor',
+			'Highlight',
 			'|',
 			'bold',
 			'italic',
@@ -98,5 +120,5 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'zh-cn'
 };
